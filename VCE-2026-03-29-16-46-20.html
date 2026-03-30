@@ -1,0 +1,187 @@
+# Automated Grading System
+
+This project automates the grading process through an integrated approach, using a frontend and backend with appropriate database management and configurations.
+
+## Project Structure
+
+- **frontend/**: Contains all frontend UI components and assets.
+- **backend/**: Contains APIs and business logic.
+- **database/**: Contains schema and migration files.
+- **config/**: Configuration files for various environments (development, testing, production).
+- **docs/**: Documentation for the project.
+
+## Getting Started
+
+Follow the sections below to set up the project locally. 
+
+## Contributing
+
+We welcome contributions from the community! Please refer to the contributing guidelines in `docs/CONTRIBUTING.md`.
+
+## License
+
+This project is licensed under the MIT License.
+
+
+
+
+automated-grading-system/
+├── README.md
+├── .gitignore
+├── .github/
+│   └── workflows/
+│       ├── ci-cd.yml
+│       └── tests.yml
+├── backend/
+│   ├── app/
+│   │   ├── __init__.py
+│   │   ├── main.py
+│   │   ├── config.py
+│   │   ├── models/
+│   │   │   ├── __init__.py
+│   │   │   ├── user.py
+│   │   │   ├── course.py
+│   │   │   ├── assignment.py
+│   │   │   ├── submission.py
+│   │   │   ├── grade.py
+│   │   │   └── rubric.py
+│   │   ├── routes/
+│   │   │   ├── __init__.py
+│   │   │   ├── auth.py
+│   │   │   ├── courses.py
+│   │   │   ├── assignments.py
+│   │   │   ├── submissions.py
+│   │   │   ├── grades.py
+│   │   │   ├── rubrics.py
+│   │   │   └── analytics.py
+│   │   ├── services/
+│   │   │   ├── __init__.py
+│   │   │   ├── grading_engine.py
+│   │   │   ├── plagiarism_checker.py
+│   │   │   ├── feedback_generator.py
+│   │   │   ├── analytics_service.py
+│   │   │   └── code_executor.py
+│   │   ├── utils/
+│   │   │   ├── __init__.py
+│   │   │   ├── decorators.py
+│   │   │   ├── validators.py
+│   │   │   └── helpers.py
+│   │   ├── middleware/
+│   │   │   ├── __init__.py
+│   │   │   ├── auth_middleware.py
+│   │   │   └── error_handler.py
+│   │   └── tasks/
+│   │       ├── __init__.py
+│   │       ├── grade_submission.py
+│   │       └── check_plagiarism.py
+│   ├── tests/
+│   │   ├── __init__.py
+│   │   ├── test_auth.py
+│   │   ├── test_courses.py
+│   │   ├── test_submissions.py
+│   │   ├── test_grading.py
+│   │   └── conftest.py
+│   ├── requirements.txt
+│   ├── Dockerfile
+│   └── docker-compose.yml
+├── frontend/
+│   ├── public/
+│   │   ├── index.html
+│   │   └── favicon.ico
+│   ├── src/
+│   │   ├── index.tsx
+│   │   ├── App.tsx
+│   │   ├── components/
+│   │   │   ├── Auth/
+│   │   │   │   ├── LoginForm.tsx
+│   │   │   │   └── RegisterForm.tsx
+│   │   │   ├── Dashboard/
+│   │   │   │   ├── InstructorDashboard.tsx
+│   │   │   │   └── StudentDashboard.tsx
+│   │   │   ├── Courses/
+│   │   │   │   ├── CourseList.tsx
+│   │   │   │   ├── CourseDetail.tsx
+│   │   │   │   └── CourseForm.tsx
+│   │   │   ├── Assignments/
+│   │   │   │   ├── AssignmentList.tsx
+│   │   │   │   ├── AssignmentDetail.tsx
+│   │   │   │   └── AssignmentForm.tsx
+│   │   │   ├── Submissions/
+│   │   │   │   ├── SubmissionUpload.tsx
+│   │   │   │   ├── SubmissionList.tsx
+│   │   │   │   └── SubmissionDetail.tsx
+│   │   │   ├── Rubrics/
+│   │   │   │   ├── RubricBuilder.tsx
+│   │   │   │   ├── RubricTemplate.tsx
+│   │   │   │   └── RubricList.tsx
+│   │   │   ├── Grades/
+│   │   │   │   ├── GradeView.tsx
+│   │   │   │   ├── FeedbackView.tsx
+│   │   │   │   └── GradeEdit.tsx
+│   │   │   ├── Analytics/
+│   │   │   │   ├── Analytics.tsx
+│   │   │   │   ├── GradeDistribution.tsx
+│   │   │   │   ├── StudentProgress.tsx
+│   │   │   │   └── ClassStatistics.tsx
+│   │   │   └── Common/
+│   │   │       ├── Header.tsx
+│   │   │       ├── Sidebar.tsx
+│   │   │       ├── Footer.tsx
+│   │   │       └── Loader.tsx
+│   │   ├── pages/
+│   │   │   ├── HomePage.tsx
+│   │   │   ├── LoginPage.tsx
+│   │   │   ├── DashboardPage.tsx
+│   │   │   └── NotFoundPage.tsx
+│   │   ├── hooks/
+│   │   │   ├── useAuth.ts
+│   │   │   ├── useCourses.ts
+│   │   │   ├── useSubmissions.ts
+│   │   │   └── useGrades.ts
+│   │   ├── services/
+│   │   │   ├── api.ts
+│   │   │   ├── authService.ts
+│   │   │   ├── courseService.ts
+│   │   │   ├── submissionService.ts
+│   │   │   └── gradeService.ts
+│   │   ├── store/
+│   │   │   ├── store.ts
+│   │   │   ├── authSlice.ts
+│   │   │   ├── courseSlice.ts
+│   │   │   └── submissionSlice.ts
+│   │   ├── styles/
+│   │   │   ├── App.css
+│   │   │   ├── index.css
+│   │   │   └── variables.css
+│   │   └── types/
+│   │       └── index.ts
+│   ├── package.json
+│   ├── tsconfig.json
+│   ├── Dockerfile
+│   └── nginx.conf
+├── database/
+│   ├── migrations/
+│   │   ├── 001_initial_schema.sql
+│   │   ├── 002_add_plagiarism_table.sql
+│   │   └── 003_add_analytics_tables.sql
+│   ├── seeds/
+│   │   └── sample_data.sql
+│   └── schema.sql
+├── config/
+│   ├── development.env
+│   ├── production.env
+│   ├── testing.env
+│   └── docker-compose.yml
+├── docs/
+│   ├── ARCHITECTURE.md
+│   ├── API_DOCUMENTATION.md
+│   ├── DATABASE_SCHEMA.md
+│   ├── SETUP_GUIDE.md
+│   ├── CONTRIBUTING.md
+│   ├── DEPLOYMENT.md
+│   └── SECURITY.md
+└── .github/
+    └── workflows/
+        ├── ci.yml
+        ├── tests.yml
+        └── deploy.yml
